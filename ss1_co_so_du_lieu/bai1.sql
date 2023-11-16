@@ -18,14 +18,14 @@ SELECT
 FROM
     class;
     
-insert into class(`name`) 
-values ('C0823G1'),('C0923G1');
+INSERT INTO class(`name`) 
+VALUES ('C0823G1'),('C0923G1');
 
 SELECT 
     *
 FROM
     teacher;
     
-insert into teacher (`name`, age, country)
-values ('Giau', 21, 'Da Nang'),
+INSERT INTO teacher (`name`, age, country)
+VALUES ('Giau', 21, 'Da Nang'),
 		('Cuong', 21, 'Ha Noi');
