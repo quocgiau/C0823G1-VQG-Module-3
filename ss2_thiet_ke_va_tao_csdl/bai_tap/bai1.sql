@@ -11,11 +11,6 @@ CREATE TABLE supplies (
     `name` VARCHAR(50)
 );
 
-CREATE TABLE phone (
-    id INT KEY AUTO_INCREMENT,
-    phone VARCHAR(20)
-);
-
 CREATE TABLE export_slip_details (
     price INT NOT NULL,
     quantity INT NOT NULL,
@@ -49,10 +44,7 @@ CREATE TABLE supplier (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `name` VARCHAR(50),
     address VARCHAR(100),
-    phone VARCHAR(20),
-    phone_id INT,
-    FOREIGN KEY (phone_id)
-        REFERENCES phone (id)
+    phone VARCHAR(20)
 );
 
 CREATE TABLE the_order (
@@ -71,4 +63,12 @@ CREATE TABLE order_details (
         REFERENCES the_order (id),
     FOREIGN KEY (supplies_id)
         REFERENCES supplies (id)
+);
+
+CREATE TABLE phone (
+    id INT KEY AUTO_INCREMENT,
+    supplier_id INT NOT NULL,
+    phone VARCHAR(20),
+    FOREIGN KEY (supplier_id)
+        REFERENCES supplier (id)
 );
