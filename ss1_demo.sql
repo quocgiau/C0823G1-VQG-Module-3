@@ -1,6 +1,6 @@
 create database if not exists demo_ss1;
 use demo_ss1;
-​
+
 create table class (
 	class_id int primary key auto_increment,
     class_name varchar(50)
@@ -14,14 +14,14 @@ create table student(
     class_id int,
     foreign key(class_id) references class(class_id)
 );
-​
--- drop table student;
-​
+
+drop table student;
+
 SELECT 
     *
 FROM
     student;
-​
+
 insert into student( student_name, student_birthday, student_gender)
 values ('Văn Độ','2000-10-11',1),
 		('Văn Độ','2000-10-11',1),
