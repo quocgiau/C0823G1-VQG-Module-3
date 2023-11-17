@@ -16,7 +16,7 @@ CREATE TABLE export_slip_details (
     quantity INT NOT NULL,
     bill_id INT,
     supplies_id INT,
-    UNIQUE (bill_id , supplies_id),
+    PRIMARY KEY (bill_id , supplies_id),
     FOREIGN KEY (bill_id)
         REFERENCES bill (id),
     FOREIGN KEY (supplies_id)
@@ -33,7 +33,7 @@ CREATE TABLE entry_details (
     `number` INT NOT NULL,
     import_coupon_id INT,
     supplies_id INT,
-    UNIQUE (import_coupon_id , supplies_id),
+    PRIMARY KEY (import_coupon_id , supplies_id),
     FOREIGN KEY (import_coupon_id)
         REFERENCES import_coupon (id),
     FOREIGN KEY (supplies_id)
@@ -58,7 +58,7 @@ CREATE TABLE the_order (
 CREATE TABLE order_details (
     the_order_id INT,
     supplies_id INT,
-    UNIQUE (the_order_id , supplies_id),
+    PRIMARY KEY (the_order_id , supplies_id),
     FOREIGN KEY (the_order_id)
         REFERENCES the_order (id),
     FOREIGN KEY (supplies_id)
