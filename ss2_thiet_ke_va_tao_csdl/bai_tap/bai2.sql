@@ -23,12 +23,13 @@ CREATE TABLE product (
 );
 
 CREATE TABLE order_detail (
-    qty VARCHAR(50),
     o_id INT NOT NULL,
     p_id INT NOT NULL,
     FOREIGN KEY (o_id)
         REFERENCES `order` (id),
     FOREIGN KEY (p_id)
-        REFERENCES product (id)
+        REFERENCES product (id),
+    qty VARCHAR(50),
+    PRIMARY KEY (o_id , p_id)
 ); 
 
