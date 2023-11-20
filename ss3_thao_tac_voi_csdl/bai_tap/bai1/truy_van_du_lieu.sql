@@ -2,7 +2,7 @@
 SELECT 
     *
 FROM
-    student
+    student s
 WHERE
     `name` LIKE 'H%';
     
@@ -10,7 +10,7 @@ WHERE
 SELECT 
     *
 FROM
-    class
+    class c
 WHERE
     MONTH(`date`) = 12;
     
@@ -18,13 +18,13 @@ WHERE
 SELECT 
     *
 FROM
-    `subject`
+    `subject` sb
 WHERE
     credit BETWEEN 3 AND 5;
     
 -- Thay đổi mã lớp(ClassID) của sinh viên có tên ‘Hung’ là 2.
 SET sql_safe_updates = 0;
-UPDATE student 
+UPDATE student s
 SET 
     class_id = 2
 WHERE
@@ -33,11 +33,11 @@ SET sql_safe_updates = 1;
 
 -- Hiển thị các thông tin: StudentName, SubName, Mark. Dữ liệu sắp xếp theo điểm thi (mark) giảm dần. nếu trùng sắp theo tên tăng dần.
 SELECT 
-    student.`name`, `subject`.`name`, mark.mark
+    s.`name`, sb.`name`, m.mark
 FROM
-    student
+    student s
         JOIN
-    mark ON student.id = mark.student_id
+    mark m ON s.id = m.student_id
         JOIN
-    `subject` ON `subject`.id = mark.sub_id
-ORDER BY mark.mark DESC , student.`name` ASC;
+    `subject` sb ON sb.id = m.sub_id
+ORDER BY m.mark DESC , s.`name` ASC;

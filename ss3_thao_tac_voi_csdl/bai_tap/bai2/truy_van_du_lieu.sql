@@ -1,40 +1,42 @@
 -- Hiển thị các thông tin  gồm oID, oDate, oPrice của tất cả các hóa đơn trong bảng Order
 SELECT 
-    `order`.id, `order`.`date`, `order`.total_price
+    o.id, o.`date`, o.total_price
 FROM
-    `order`;
+    `order` o;
     
 -- Hiển thị danh sách các khách hàng đã mua hàng, và danh sách sản phẩm được mua bởi các khách
 SELECT 
-    customer.`name`, product.`name`
+    c.`name`,
+    GROUP_CONCAT(p.`name`) AS 'product_name'
 FROM
-    customer
+    customer c
         JOIN
-    `order` ON customer.id = `order`.c_id
+    `order` o ON c.id = o.c_id
         JOIN
-    order_detail ON `order`.id = order_detail.o_id
+    order_detail od ON o.id = od.o_id
         JOIN
-    product ON product.id = order_detail.p_id;
+    product p ON p.id = od.p_id
+GROUP BY c.`name`;
 
 -- Hiển thị tên những khách hàng không mua bất kỳ một sản phẩm nào
 SELECT 
-    customer.`name`
+    c.`name`
 FROM
-    customer
+    customer c
         LEFT JOIN
-    `order` ON customer.id = `order`.c_id
+    `order` o ON c.id = o.c_id
 WHERE
-    `order`.id IS NULL;
+    o.id IS NULL;
 
 -- Hiển thị mã hóa đơn, ngày bán và giá tiền của từng hóa đơn (giá một hóa đơn được tính bằng tổng giá bán của từng loại mặt hàng xuất hiện trong hóa đơn. Giá bán của từng loại được tính = odQTY*pPrice)
 SELECT 
-    `order`.id,
-    `order`.`date`,
-    SUM(order_detail.qty * product.price) AS total_price
+    o.id,
+    o.`date`,
+    SUM(od.qty * p.price) AS total_price
 FROM
-    `order`
+    `order` o
         JOIN
-    order_detail ON `order`.id = order_detail.o_id
+    order_detail od ON o.id = od.o_id
         JOIN
-    product ON product.id = order_detail.p_id
-GROUP BY `order`.id , `order`.`date`;
+    product p ON p.id = od.p_id
+GROUP BY o.id;
