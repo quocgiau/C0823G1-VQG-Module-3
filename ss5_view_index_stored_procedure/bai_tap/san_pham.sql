@@ -59,8 +59,8 @@ DROP VIEW view_products;
 DELIMITER //
 CREATE PROCEDURE get_all()
 BEGIN
-SELECT *
-FROM products;
+	SELECT *
+	FROM products;
 END //
 DELIMITER ;
 CALL get_all();
@@ -68,14 +68,51 @@ CALL get_all();
 -- Tạo store procedure thêm một sản phẩm mới
 DELIMITER //
 CREATE PROCEDURE add_product(
-    IN p_productCode VARCHAR(50),
-    IN p_productName VARCHAR(100),
-    IN p_productPrice DECIMAL(10, 2),
-    IN p_productStatus VARCHAR(50)
+    IN new_code VARCHAR(10),
+    IN new_name VARCHAR(50),
+	IN new_price DOUBLE,
+    IN new_amount INT,
+    IN new_description TEXT,
+    IN new_status VARCHAR(20)
 )
 BEGIN
-    INSERT INTO products (`code`, `name`, price, `status`)
-    VALUES (p_productCode, p_productName, p_productPrice, p_productStatus);
+    INSERT INTO products (`code`, `name`, price, amount, `description`, `status`)
+    VALUES (new_code, new_name, new_price, new_amount, new_description, new_status);
 END //
 DELIMITER ;
-CALL add_product('SP-45', 'muối', 9.99, 'có');
+CALL add_product('SP-45', 'muối', 9.99, 2, 'hello', 'có');
+
+-- Tạo store procedure sửa thông tin sản phẩm theo id
+DELIMITER //
+CREATE PROCEDURE edit_product(
+    IN new_id INT,
+    IN new_code VARCHAR(10),
+    IN new_name VARCHAR(50),
+    IN new_price DOUBLE,
+    IN new_amount INT,
+    IN new_description TEXT,
+    IN new_status VARCHAR(20)
+)
+BEGIN
+    UPDATE products
+    SET `code` = new_code,
+        `name` = new_name,
+        price = new_price,
+        amount = new_amount,
+        `description` = new_description,
+        `status` = new_status
+    WHERE id = new_id;
+END //
+DELIMITER ;
+
+-- Tạo store procedure xoá sản phẩm theo id
+DELIMITER //
+CREATE PROCEDURE delete_product(
+    IN delete_id INT
+)
+BEGIN
+    DELETE FROM products
+    WHERE id = delete_id;
+END //
+DELIMITER ;
+CALL delete_product(7);
