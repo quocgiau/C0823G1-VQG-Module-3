@@ -1,0 +1,373 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header {
+    height: 10%;
+}
+
+.main {
+    min-height: 84%;
+}
+
+.footer {
+    background: grey;
+    height: 50px;
+    text-align: center;
+    justify-content: space-between;
+}
+
+@media only screen and (min-width: 1241px) {
+    .col-l-1 {
+        width: 8.33333%;
+    }
+
+    .col-l-2 {
+        width: 16.66667%;
+    }
+
+    .col-l-3 {
+        width: 25%;
+    }
+
+    .col-l-4 {
+        width: 33.33333%;
+    }
+
+    .col-l-5 {
+        width: 41.66667%;
+    }
+
+    .col-l-6 {
+        width: 50%;
+    }
+
+    .col-l-7 {
+        width: 58.33333%;
+    }
+
+    .col-l-8 {
+        width: 66.66667%;
+    }
+
+    .col-l-9 {
+        width: 75%;
+    }
+
+    .col-l-10 {
+        width: 83.33333%;
+    }
+
+    .col-l-11 {
+        width: 91.66667%;
+    }
+
+    .col-l-12 {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 741px)and (max-width: 1240px) {
+    .col-m-1 {
+        width: 8.33333%;
+    }
+
+    .col-m-2 {
+        width: 16.66667%;
+    }
+
+    .col-m-3 {
+        width: 25%;
+    }
+
+    .col-m-4 {
+        width: 33.33333%;
+    }
+
+    .col-m-5 {
+        width: 41.66667%;
+    }
+
+    .col-m-6 {
+        width: 50%;
+    }
+
+    .col-m-7 {
+        width: 58.33333%;
+    }
+
+    .col-m-8 {
+        width: 66.66667%;
+    }
+
+    .col-m-9 {
+        width: 75%;
+    }
+
+    .col-m-10 {
+        width: 83.33333%;
+    }
+
+    .col-m-11 {
+        width: 91.66667%;
+    }
+
+    .col-m-12 {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 740px ) {
+    .col-s-1 {
+        width: 8.33333%;
+    }
+
+    .col-s-2 {
+        width: 16.66667%;
+    }
+
+    .col-s-3 {
+        width: 25%;
+    }
+
+    .col-s-4 {
+        width: 33.33333%;
+    }
+
+    .col-s-5 {
+        width: 41.66667%;
+    }
+
+    .col-s-6 {
+        width: 50%;
+    }
+
+    .col-s-7 {
+        width: 58.33333%;
+    }
+
+    .col-s-8 {
+        width: 66.66667%;
+    }
+
+    .col-s-9 {
+        width: 75%;
+    }
+
+    .col-s-10 {
+        width: 83.33333%;
+    }
+
+    .col-s-11 {
+        width: 91.66667%;
+    }
+
+    .col-s-12 {
+        width: 100%;
+    }
+}
+
+a {
+    align-content: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+.website {
+    /* height: 100%; */
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.title-word {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+}
+
+.title-word ul {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.title-word ul li {
+    padding: 0 20px;
+}
+
+.content {
+    height: 80%;
+}
+
+.left ul {
+    justify-content: center;
+    width: 100%;
+}
+
+.left ul li {
+    text-align: center;
+}
+
+.left ul li p {
+    color: grey;
+    display: flex;
+}
+
+.left img {
+    width: 85%;
+}
+
+.right {
+    margin-left: 4%;
+}
+
+@media only screen and (max-width: 740px ) {
+    .col-s-1 {
+        width: 8.33333%;
+    }
+
+    .col-s-2 {
+        width: 16.66667%;
+    }
+
+    .col-s-3 {
+        width: 25%;
+    }
+
+    .col-s-4 {
+        width: 33.33333%;
+    }
+
+    .col-s-5 {
+        width: 41.66667%;
+    }
+
+    .col-s-6 {
+        width: 50%;
+    }
+
+    .col-s-7 {
+        width: 58.33333%;
+    }
+
+    .col-s-8 {
+        width: 66.66667%;
+    }
+
+    .col-s-9 {
+        width: 75%;
+    }
+
+    .col-s-10 {
+        width: 83.33333%;
+    }
+
+    .col-s-11 {
+        width: 91.66667%;
+    }
+
+    .col-s-12 {
+        width: 100%;
+    }
+
+    /*tăng kích thước font cho dễ đọc*/
+    .left li {
+        font-size: 40px;
+        text-align: center;
+        color: white;
+    }
+
+    .right li a {
+        font-size: 40px;
+        text-align: center;
+        color: red;
+    }
+
+    p {
+        font-size: 35px;
+        color: darkblue;
+        margin: 5px;
+    }
+
+    .title {
+        font-size: 55px;
+        color: red;
+    }
+
+    /*Ẩn phần list*/
+    .header ul {
+        display: none;
+    }
+
+    /*Hiện thị dropdown*/
+    .header select {
+        height: 32px;
+        display: inline;
+    }
+}
+
+.title-word {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+}
+
+.title-word ul {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.title-word ul li {
+    padding: 0px 20px;
+}
+
+.content {
+    height: 80%;
+}
+
+.left ul {
+    justify-content: center;
+    width: 100%;
+}
+
+.left ul li {
+    text-align: center;
+}
+
+.left ul li p {
+    color: grey;
+    display: flex;
+}
+
+#sidebar {
+    width: 30%;
+    float: left;
+}
+
+#post {
+    width: 60%;
+    float: right;
+}
