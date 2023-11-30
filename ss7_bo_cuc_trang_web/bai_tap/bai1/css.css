@@ -30,17 +30,17 @@
     cursor: pointer;
 }
 
-.col1 {
-    height: 500px;
+.col-1 {
+    height: 800px;
     background: #f1f1f1;
 }
 
-.col2 {
-    height: 500px;
+.col-2 {
+    height: 800px;
 }
 
-.col3 {
-    height: 500px;
+.col-3 {
+    height: 800px;
     background: #f1f1f1;
 }
 .login {
